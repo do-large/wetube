@@ -13,6 +13,10 @@ const app = express();
 
 app.use(helmet());
 app.set('view engine', "pug");
+
+//express.static > 디렉토리에서 파일을 보내주는 미들웨어
+app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));

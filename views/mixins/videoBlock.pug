@@ -1,0 +1,15 @@
+mixin videoBlock(video = {})
+    .videoBlock
+        a(href=routes.videoDetail(video.id))
+            video.videoBlock_thumbnail(src=video.videoFile, controls=false)
+            h4.videoBlock_title=video.title
+            if video.views === 1
+                h6.videoBlock_views 1 view
+            else
+                h6.videoBlock_views #{video.views} views
+
+
+//- reason why use mixin
+//- capsulize code to show datas that don't have same information, but same structure
+//-  > same structure, different information
+
